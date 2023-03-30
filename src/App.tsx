@@ -19,7 +19,6 @@ function App() {
         console.log(menub)
         menub.style.display = "flex";
         hambclose.style.display = "block";
-        /* menu.classList.toggle("mostrarmenu"); */
       }
     )
     hambclose.addEventListener("click",
@@ -63,8 +62,7 @@ function App() {
 
         <div className="mainnew">{/* BBBBBBBBBBB */}
           <div className="mainimage">
-            {/* <img src={imagedesk} id="mainimage" alt="image" /> */}
-
+              {/* here i set the background image in this div */}
           </div>
           <div className="maintopic">
             <div className="topic">
@@ -80,15 +78,15 @@ function App() {
         <section className="sidetopics"> {/* CCCCCCCCCCCCCC */}
           <h2>New</h2>
           <article className="item1 items">
-            <h3>Hydrogen VS Electric Cars</h3>
+            <a href='#'>Hydrogen VS Electric Cars</a>
             <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
           </article>
           <article className="item2 items">
-            <h3>The Downsides of AI Artistry</h3>
+            <a href='#'>The Downsides of AI Artistry</a>
             <p>What are the possible adverse effects of on-demand AI image generation?</p>
           </article>
           <article className="item3 items">
-            <h3>Is VC Funding Drying Up?</h3>
+            <a href='#'>Is VC Funding Drying Up?</a>
             <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
           </article>
         </section> {/* CCCCCCCCCCCCCCCCCCC */}

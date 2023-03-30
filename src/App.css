@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-*{
-  /* modelo reset */
+
+/* modelo reset */
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -8,115 +9,176 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
-ul, ol, li {
+
+ul,
+ol,
+li {
   list-style: none;
   list-style-type: none;
 }
-a{
-text-decoration: none;
+
+a {
+  text-decoration: none;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
-body{
+
+body {
   width: 100%;
 }
-.container{
+
+/* fim modelo reset */
+.container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, auto));
-  grid-template-areas: 
-  "a a"
-  "b c"
-  "d d";
+  grid-template-areas:
+    "a a"
+    "b c"
+    "d d";
   min-height: 100vh;
   max-width: 90%;
   margin: auto;
   gap: 2vh;
 }
-.header{
+
+.header {
   grid-area: a;
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
   padding: 2vh 5vh 2vh 5vh;
   width: 100%;
 }
-#logo{
- align-self: flex-start;
- height: 80%;
+
+#logo {
+  align-self: flex-start;
+  height: 80%;
 }
-#hamburger{   /* hamb */
+
+#hamburger {
+  /* hamb */
   display: none;
 }
-#hamburgerclose{  /* hamb close */
+
+#hamburgerclose {
+  /* hamb close */
   display: none;
 }
-#navegation{
+
+#navegation {
+  /* this is the desktop navigation menu horizontal */
   margin: auto 0 auto 0;
 }
-#navegation ul{
+
+#navegation ul {
   display: flex;
   gap: 5vh;
 }
-.mainnew{ 
+
+nav ul li a {
+  color: #000;
+}
+
+nav ul li a:hover {
+  animation: changecolorfont 1s;
+  color: #F15E50;
+}
+
+@keyframes changecolorfont {
+  from {
+    color: #000;
+  }
+
+  to {
+    color: #F15E50;
+  }
+}
+
+/* efeito done*/
+
+
+.mainnew {
+  /* this is all side new with the main picture */
   grid-area: b;
-  background-color: saddlebrown;
   min-height: 80vh;
-  display: flex;    /* importante ocupa o resto do tamanho o pai precisa ser flex */
+  display: flex;
+  /* importante ocupa o resto do tamanho o pai precisa ser flex */
   flex-direction: column;
 }
-.mainimage{
+
+.mainimage {
+  /* main image */
   width: 100%;
   aspect-ratio: 1460/600;
   background-image: url('../src/assets/images/image-web-3-desktop.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-#mainimage{
-  width: 100%;
-}
-.maintopic{
+
+.maintopic {
+  /* section above main image */
   display: flex;
-  background-color: khaki;
   max-width: 100%;
   gap: 5%;
-  flex-grow: 1;     /* importante ocupa o resto do tamanho o pai precisa ser flex */
+  flex-grow: 1;
+  /* importante!!! ocupa o resto do tamanho o pai precisa ser flex */
 }
-.maintopic .topic{
-  background-color: gold;
+
+.maintopic .topic {
   min-width: 45%;
   height: 100%;
   margin: auto;
   display: flex;
   padding: 2vh;
 }
-.topic h1{
+
+.topic h1 {
   text-align: center;
   margin: auto;
   font-size: 4vw;
 }
-.introduction{
-  background-color: brown;
+
+.introduction {
   min-width: 50%;
-  height: 100%;
+  height: 80%;
+  /* xuxa de cem para oitenta */
   margin: auto;
   padding: 2vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
-.introduction a{
-  width: 30vh; height: 8vh;
+
+.introduction a {
+  width: 30vh;
+  height: 8vh;
   background-color: #F15E50;
   text-align: center;
   line-height: 8vh;
   letter-spacing: 2px;
   font-weight: 700;
   color: #FFF;
-
 }
 
-.sidetopics{ /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
+.introduction a:hover {
+  animation: changebackground 1.5s;
+  background-color: #000;
+}
+
+@keyframes changebackground {
+  from {
+    background-color: #F15E50;
+  }
+  to {
+    background-color: #000;
+  }
+}
+
+/* efeito done */
+
+.sidetopics {
+  /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
   grid-area: c;
   background-color: #00001A;
   min-height: 60vh;
@@ -126,118 +188,190 @@ body{
   justify-content: space-evenly;
   color: #FFF;
 }
-.item1, .item2{
+
+.item1,
+.item2 {
   border-bottom: 1px solid #FFF;
   padding-bottom: 3vh;
 }
-.item3{
+
+.item3 {
   padding-bottom: 3vh;
 }
-.sidetopics h2{
+
+.sidetopics h2 {
   color: #E9AB53;
 }
-.sidetopics article.items p{
-  font-size: 15px;
-  font-weight: 400;
+
+.sidetopics article a {
+  font-size: 1.4vw;
+  color: #FFF;
+  font-weight: 800;
 }
 
+.sidetopics article a:hover {
+  color: #E9AB53;
+  font-size: 1.6vw;
+  animation: changefontcolora 1.5s;
+}
 
+@keyframes changefontcolora {
+  from {
+    font-size: 1.4vw;
+    color: #FFF;
+  }
+
+  to {
+    font-size: 1.6vw;
+    color: #E9AB53;
+  }
+}
+
+/* efeito done*/
+.sidetopics article.items p {
+  margin-top: 3px;
+  font-size: 1.2vw;
+  font-weight: 400;
+}
 /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
 
 /* DDDDDDDDDDDDDDDDDDDDDDDDDD */
-.bottom{
+.bottom {
   grid-area: d;
-  background-color: blueviolet;
   display: flex;
   justify-content: space-between;
 }
-.bottom article{
+
+.bottom article {
   max-width: 33.33%;
 }
-article.news{
+
+article.news {
   display: flex;
 }
-article.news img{
+
+article.news img {
   max-width: 18vh;
 }
-.text{
+
+.text {
   padding: 0 3vh 0 3vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.text h3{
+
+.text h3 {
   font-size: 2.5vw;
   font-weight: 900;
   color: #C5C6CE;
 }
-.text a{
+
+.text a {
   font-size: 1.5vw;
-  font-weight: 700;
+  font-weight: 800;
+  color: #000;
 }
+
+.text a:hover {
+  color: #F15E50;
+  animation: changefontcolor 1.5s;
+}
+@keyframes changefontcolor {
+  from{
+    color: #000;
+  }to{
+    color: #F15E50;
+  }
+}
+
+/* efeito done */
 /* DDDDDDDDDDDDDDDDDDDDDDDDDD */
 
-
-
-
-#navegationb{
-  display: none;  /* xuxa */
+#navegationb {
+  display: none;
 }
 
-@media (max-width: 893px){
-  .container{
+@media (max-width: 893px) {
+  .container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(50%, auto)); */  /* aki */
     grid-template-columns: 1fr; /* aki */
-    grid-template-areas: 
-    "a" /* aki */
-    "b" /* aki */
-    "c" /* aki */
-    "d"; /* aki */
+    grid-template-areas:
+      "a" /* aki */
+      "b" /* aki */
+      "c" /* aki */
+      "d"; /* aki */
   }
-  .maintopic{
-    flex-direction: column; /* aki */
+
+  .maintopic {
+    flex-direction: column;/* aki */
+    gap: 0; /* aki */
   }
-  .maintopic .topic{
+
+  .maintopic .topic {
     width: 100%; /* aki */
+    text-align: left; /* aki */
+    padding: 0; /* aki */
   }
-  .introduction a{
-    margin-top: 5px;  /* aki */
+
+  .maintopic .topic h1 { /* aki */
+    text-align: left;
+    margin-left: 0;
+    font-size: 8vw;
   }
-  .bottom{
+
+  .introduction {
+    padding: 0;
+  }
+
+  .introduction a {
+    margin-top: 5px; /* aki */
+  }
+
+  .introduction p {
+    margin-bottom: 20px;
+  }
+
+  .bottom {
     gap: 3vh; /* aki */
   }
-  .bottom article{
-    min-width: 100%;  /* aki */
+
+  .bottom article {
+    min-width: 100%; /* aki */
   }
-  .text{
-    padding: 3vh 3vh 3vh 3vh; /* aki */
+
+  .text {
+    padding: 3vh; /* aki */
   }
-  .text h3{
+
+  .text h3 {
     font-size: 4vw; /* aki */
   }
-  .text a{
+
+  .text a {
     font-size: 3.5vw; /* aki */
   }
-  
-  
-  
-  .bottom{
+
+
+
+  .bottom {
     flex-direction: column;
   }
 }
 
 
-@media (max-width: 617px){
-  .container{
-    display: flex;  /* aki */
+@media (max-width: 617px) {
+  .container {
+    display: flex; /* aki */
     max-width: 100%; /* aki */
     flex-direction: column; /* aki */
   }
-  #navegation{
+
+  #navegation {
     display: none;
   }
-  #navegationb{  /* aki */
+
+  #navegationb { /* aki */
     min-height: 100vh;
     width: 50%;
     background-color: #FFF;
@@ -246,103 +380,109 @@ article.news img{
     display: none;
     justify-content: center;
   }
-  #navegationb ul{
+
+  #navegationb ul { /* aki */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 50%;
-    margin: auto; margin-left: 3vh;
+    margin: auto;
+    margin-left: 3vh;
   }
-  #hamburger{ /* aki */
+
+  #hamburger { /* aki */
     align-self: flex-start;
     margin-top: 3vh;
     margin-right: 3vh;
     display: block;
     cursor: pointer;
   }
-  #navegationb ul{ /* aki */
+
+  #navegationb ul { /* aki */
     flex-direction: column;
     justify-content: space-evenly;
     height: 50%;
     margin: auto;
     margin-left: 20px;
   }
-  #hamburgerclose{ /* aki */
+
+  #hamburgerclose { /* aki */
     align-self: flex-start;
     position: absolute;
-    right: 3vh; top: 3vh;
+    right: 3vh;
+    top: 3vh;
     cursor: pointer;
     z-index: 10;
-    
   }
 
-  .header{
+  .header {
     grid-area: a;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     padding: 0; /* aki */
     width: 100%;
-    height: 8vh;  /* aki */
+    height: 8vh; /* aki */
   }
-  #logo{
-   align-self: flex-start;
-   height: 50%; /* aki */
-   margin: auto;  /* aki */
-   margin-left: 3vh;
+
+  #logo {
+    align-self: flex-start;
+    height: 50%; /* aki */
+    margin: auto; /* aki */
+    margin-left: 3vh;
   }
-  .header nav{
+
+  .header nav {
     margin: auto 0 auto 0;
   }
-  .header nav ul{
+
+  .header nav ul {
     display: flex;
     gap: 5vh;
   }
-  .hamburger{
+
+  .hamburger {
     align-self: flex-start;
-    margin: auto; margin-right: 3vh;  /* aki */
+    margin: auto;
+    margin-right: 3vh; /* aki */
   }
 
-
-  .mainnew{ 
+  .mainnew {
     grid-area: b;
-    background-color: saddlebrown;
     min-height: 80vh;
-    display: flex;    /* importante ocupa o resto do tamanho o pai precisa ser flex */
+    display: flex;
     flex-direction: column;
   }
-  .mainimage{
+
+  .mainimage {
     width: 100%;
     background-image: url('../src/assets/images/image-web-3-mobile.jpg'); /* aki */
-    aspect-ratio: 1;  /* aki */
+    aspect-ratio: 1; /* aki */
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  #mainimage{
-    width: 100%;
-  }
-  .maintopic{
+
+  .maintopic {
     display: flex;
-    background-color: khaki;
     max-width: 100%;
     gap: 5%;
-    flex-grow: 1;     /* importante ocupa o resto do tamanho o pai precisa ser flex */
+    flex-grow: 1; /* importante ocupa o resto do tamanho o pai precisa ser flex */
   }
-  .maintopic .topic{
-    background-color: gold;
+
+  .maintopic .topic {
     min-width: 45%;
     height: 100%;
     margin: auto;
     display: flex;
     padding: 2vh;
   }
-  .topic h1{
+
+  .topic h1 {
     text-align: center;
     margin: auto;
-    font-size: 10vw;  /* aki */
+    font-size: 10vw; /* aki */
   }
-  .introduction{
-    background-color: brown;
+
+  .introduction {
     min-width: 50%;
     height: 100%;
     margin: auto;
@@ -351,19 +491,22 @@ article.news img{
     justify-content: space-around;
     flex-direction: column;
   }
-  .introduction a{
+
+  .introduction a {
     margin-top: 20px; /* aki */
-    width: 30vh; height: 8vh;
+    width: 30vh;
+    height: 8vh;
     background-color: #F15E50;
     text-align: center;
     line-height: 8vh;
     letter-spacing: 2px;
     font-weight: 700;
     color: #FFF;
-  
+
   }
-  
-  .sidetopics{ /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
+
+  .sidetopics {
+    /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
     grid-area: c;
     background-color: #00001A;
     min-height: 60vh;
@@ -373,54 +516,65 @@ article.news img{
     justify-content: space-evenly;
     color: #FFF;
   }
-  .item1, .item2{
+
+  .item1,
+  .item2 {
     border-bottom: 1px solid #FFF;
     padding-bottom: 3vh;
   }
-  .item3{
+
+  .item3 {
     padding-bottom: 3vh;
   }
-  .sidetopics h2{
+
+  .sidetopics h2 {
     color: #E9AB53;
   }
-  .sidetopics article.items p{
-    font-size: 15px;
+
+  .sidetopics article.items p {
+    font-size: 3vw; /* aki */
     font-weight: 400;
   }
-  
-  
+
+  .sidetopics article a {
+    font-size: 3vw; /* aki */
+  }
   /* CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
-  
+
   /* DDDDDDDDDDDDDDDDDDDDDDDDDD */
-  .bottom{
+  .bottom {
     grid-area: d;
-    background-color: blueviolet;
     display: flex;
   }
-  article.news{
+
+  article.news {
     display: flex;
   }
-  article.news img{
+
+  article.news img {
     max-width: 18vh;
   }
-  .text{
+
+  .text {
     padding: 3vh; /* aki */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .text h3{
+
+  .text h3 {
     font-size: 7vw; /* aki */
     font-weight: 900;
     color: #C5C6CE;
   }
-  .text a{
+
+  .text a {
     font-size: 4vw; /* aki */
     font-weight: 700;
   }
-  .text p{
+
+  .text p {
     font-size: 3vw; /* aki */
   }
   /* DDDDDDDDDDDDDDDDDDDDDDDDDD */
-  
 }
